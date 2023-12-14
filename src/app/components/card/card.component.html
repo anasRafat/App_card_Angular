@@ -1,0 +1,11 @@
+<div class="card" >
+  <div class="d-flex justify-content-end">
+  <button class="btn btn-danger position-absolute" (click)="del(data.id)"><i class="fa fa-duotone fa-xmark"></i></button></div>
+  <img [src]="data.img" class="card-img-top img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{data.title}}</h5>
+    <p class="card-text">{{data.details}}</p>
+
+  </div>
+  <a  class="btn btn-primary" [routerLink]="['/update' , data.id]">update</a>
+</div>

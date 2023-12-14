@@ -1,0 +1,41 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center  align-items-center ">
+  <form class="col-6 p-3 border border-1 rounded-2 border-black bg-body-tertiary " [formGroup]="loginForm">
+    <div class=" fw-bold position-relative mb-3">
+      <label class="my-1">Email</label><br />
+
+      <input type="text" name="email" class="w-100 my-1" formControlName="email" placeholder="Email" />
+      <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+        loginForm.controls['email'].invalid &&
+        (loginForm.controls['email'].dirty ||
+          loginForm.controls['email'].touched)
+      ">
+        <span *ngIf="loginForm.controls['email'].errors">
+          Email not valid </span>
+      </div>
+
+
+      <div class="password fw-bold position-relative mb-3">
+        <label class="my-1">password</label><br />
+
+        <input type="password" name="password " class="w-100 my-1" formControlName="password" placeholder="password" />
+        <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+        loginForm.controls['password'].invalid &&
+        (loginForm.controls['password'].dirty ||
+          loginForm.controls['password'].touched)
+      ">
+          <span *ngIf="loginForm.controls['password'].errors">
+            password not valid </span>
+        </div>
+      </div>
+
+
+      <button [disabled]="!loginForm.valid" type="submit" class="btn btn-secondary my-4 py-2 text-uppercase fw-bold w-100 text-white " (click)="submit()">
+        login
+      </button>
+      <br>
+      <div class="col-12 text-center">
+      <a routerLink="/sign_up">Sign up!</a>
+    </div>
+    </div>
+  </form>
+</div>

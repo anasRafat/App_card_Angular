@@ -1,0 +1,28 @@
+<div class="container text-center ">
+  <h1 class="pt-4">Add Card</h1>
+<form class="pt-5" [formGroup]="addForm">
+<div class="mb-3 row">
+  <label  class="col-sm-2 col-form-label">Card Title</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control"formControlName ="title">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label  class="col-sm-2 col-form-label">Card Details</label>
+  <div class="col-sm-6">
+    <input type="text" class="form-control" formControlName="details">
+  </div>
+</div>
+<div class="mb-3 row">
+  <label  class="col-sm-2 col-form-label">Image</label>
+  <div class="col-sm-6">
+    <input type="file" class="file-input"
+      (change)="onFileSelected($event)" formControlName="img" #fileUpload>
+
+
+  </div>
+</div>
+<button [disabled]="!addForm.valid" class="btn btn-primary btn-lg"(click)="add()">Add</button>
+</form>
+</div>
+

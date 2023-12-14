@@ -1,0 +1,66 @@
+
+<div class="container-fluid min-vh-100 d-flex justify-content-center  align-items-center ">
+  <form class="col-6 p-3 border border-1 rounded-2 border-black bg-body-tertiary " [formGroup]="signUpForm">
+    <div class=" fw-bold position-relative mb-3">
+      <label class="my-1">Name</label><br />
+
+      <input type="text" name="name" class="w-100 my-1" formControlName="name" placeholder="Name" />
+      <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+      signUpForm.controls['name'].invalid &&
+        (signUpForm.controls['name'].dirty ||
+        signUpForm.controls['name'].touched)
+      ">
+        <span *ngIf="signUpForm.controls['name'].errors">
+          name not valid </span>
+      </div>
+      <div class=" fw-bold position-relative mb-3">
+        <label class="my-1">Email</label><br />
+
+      <input type="text" name="email" class="w-100 my-1" formControlName="email" placeholder="Email" />
+      <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+      signUpForm.controls['email'].invalid &&
+        (signUpForm.controls['email'].dirty ||
+        signUpForm.controls['email'].touched)
+      ">
+        <span *ngIf="signUpForm.controls['email'].errors">
+          Email not valid </span>
+      </div>
+
+
+      <div class=" fw-bold position-relative mb-3">
+        <label class="my-1">password</label><br />
+
+        <input type="password" name="password " class="w-100 my-1" formControlName="password" placeholder="password" />
+        <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+        signUpForm.controls['password'].invalid &&
+        (signUpForm.controls['password'].dirty ||
+        signUpForm.controls['password'].touched)
+      ">
+          <span *ngIf="signUpForm.controls['password'].errors">
+            password not valid </span>
+        </div>
+      </div>
+      <div class="password fw-bold position-relative mb-3">
+        <label class="my-1">confirmPassword</label><br />
+
+        <input type="password" name="confirmPassword " class="w-100 my-1" formControlName="confirmPassword" placeholder="confirmPassword" />
+        <div class="form-control-feedback alert-danger text-danger text-end h6 p-0 m-0" *ngIf="
+        signUpForm.controls['confirmPassword'].invalid &&
+        (signUpForm.controls['confirmPassword'].dirty ||
+        signUpForm.controls['confirmPassword'].touched)
+      ">
+          <span *ngIf="signUpForm.controls['confirmPassword'].errors">
+            confirmPassword not valid </span>
+        </div>
+      </div>
+
+      <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-secondary my-4 py-2 text-uppercase fw-bold w-100 text-white " (click)="submit()">
+        submit
+      </button>
+      <div class="col-12 text-center">
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+    </div>
+  </form>
+</div>
